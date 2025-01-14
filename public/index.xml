@@ -2,18 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://Cl1n1cal.github.io/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- 0.125.7</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 14 Jan 2025 22:04:41 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Cl1n1cal.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
+      <link>https://Cl1n1cal.github.io/posts/my-first-post/</link>
       <pubDate>Tue, 14 Jan 2025 22:04:41 +0100</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <guid>https://Cl1n1cal.github.io/posts/my-first-post/</guid>
       <description>myfirstpost</description>
+    </item>
+    <item>
+      <title>Useful commands</title>
+      <link>https://Cl1n1cal.github.io/posts/useful-commands/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://Cl1n1cal.github.io/posts/useful-commands/</guid>
+      <description>Useful commands See a list of addresses and symbols defined in the linux kernel
+head /proc/kallsyms See a specific address for a symbol
+cat /proc/kallsyms | grep commit_creds View kernel modules:
+cat /proc/modules To use function names for breakpoints you can do the following in gdb:
+add-symbol-file &amp;lt;driver-path&amp;gt; &amp;lt;base-address&amp;gt; See if SMEP is enabled from inside of the machine (requires root)(extend terminal width):
+cat /proc/cpuinfo | grep smep Enable SMEP in qemu</description>
     </item>
   </channel>
 </rss>
