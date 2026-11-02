@@ -20,7 +20,3 @@ This can be verified on the pictures below or by visiting their website [pwn.col
 <br>
 <img src="/assets/images/belts.jpg" style="width:50%; height:50%;" />
 
-### Github repositories:
-- [PwnShop](https://github.com/Cl1n1cal/PwnShop)
-- [Kernel-Module-Archives](https://github.com/Cl1n1cal/Kernel-Module-Archives)
-
