@@ -1,0 +1,7 @@
+{%- assign p = include.post -%}
+{%- assign summary = p.summary | default: p.excerpt | strip_html | normalize_whitespace | remove_first: "Description" | truncatewords: 26 -%}
+<a class="post-card" href="{{ p.url | relative_url }}">
+  <span class="post-card-title">{{ p.title | escape }}</span>
+  {%- if summary != "" %}<span class="post-card-summary">{{ summary }}</span>{% endif %}
+  <time class="post-card-date" datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
+</a>

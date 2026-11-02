@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{%- assign crumbs = page.path | split: "/" -%}
+{%- assign platform = crumbs[1] -%}
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    {%- if crumbs.size > 2 and crumbs[0] == "_posts" %}
+      <nav class="breadcrumb">
+        <a href="{{ '/' | append: platform | append: '/' | relative_url }}">{{ platform | capitalize }}</a>
+        {%- assign topic_parts = crumbs | slice: 2, crumbs.size | pop -%}
+        {%- for part in topic_parts %}
+          <span>/</span> {{ part | capitalize }}
+        {%- endfor %}
+      </nav>
+    {%- endif %}
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{- page.date | date: "%b %-d, %Y" -}}
+      </time>
+      {%- if page.author %}
+        &middot; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

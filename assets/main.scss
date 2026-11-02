@@ -1,0 +1,25 @@
+---
+# Overrides minima's stylesheet: set the theme variables, then layer the custom styles on top.
+---
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+$base-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$mono-font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$base-font-size: 17px;
+$base-line-height: 1.7;
+$content-width: 860px;
+
+$background-color: #0d1117;
+$surface-color: #151b23;
+$surface-hover: #1b232e;
+$border-color: #262f3b;
+$text-color: #d4dbe3;
+$heading-color: #f2f5f8;
+$brand-color: #5eead4;
+$accent-color: #a78bfa;
+$grey-color: #8b96a3;
+$grey-color-light: $border-color;
+$grey-color-dark: #b6c0cc;
+
+@import "minima";
+@import "cl1nical";

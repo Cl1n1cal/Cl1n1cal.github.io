@@ -1,22 +1,41 @@
 ---
 layout: default
-title: Cl1nical's blog about pwn
 ---
-
 <div class="home">
-  <h1 class="page-heading">{{ page.title | default: "Main Menu" }}</h1>
+  <section class="intro">
+    {%- if site.avatar %}
+      <img class="intro-avatar" src="{{ site.avatar | relative_url }}" alt="Cl1nical avatar" width="96" height="96">
+    {%- endif %}
+    <div>
+      <p class="eyebrow">Cyber security blog</p>
+      <h1 class="intro-title">Cl1nical</h1>
+      <p class="intro-lead">{{ site.description }}</p>
+    </div>
+  </section>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      {% unless post.hidden %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <h2>
-            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          </h2>
-        </li>
-      {% endunless %}
-    {% endfor %}
-  </ul>
+  <section class="platforms">
+    {%- for platform_page in site.pages %}
+      {%- if platform_page.layout == "section" %}
+        {%- assign platform_dir = platform_page.sections.first.path | split: "/" | slice: 0, 2 | join: "/" | append: "/" %}
+        {%- assign platform_posts = site.posts | where_exp: "p", "p.path contains platform_dir" %}
+        <a class="platform-card" href="{{ platform_page.url | relative_url }}">
+          <span class="platform-name">{{ platform_page.title }}</span>
+          <span class="platform-desc">{{ platform_page.description }}</span>
+          <span class="platform-topics">
+            {%- for s in platform_page.sections %}<span class="tag">{{ s.title }}</span>{% endfor -%}
+          </span>
+          <span class="platform-count">{{ platform_posts | size }} posts &rarr;</span>
+        </a>
+      {%- endif %}
+    {%- endfor %}
+  </section>
 
+  <section class="topic">
+    <h2 class="topic-title">Latest posts</h2>
+    <ol class="post-cards">
+      {%- for post in site.posts limit: 6 %}
+        <li>{% include post-card.html post=post %}</li>
+      {%- endfor %}
+    </ol>
+  </section>
 </div>

@@ -32,6 +32,16 @@ avatar: /assets/images/avatar/profile.png
 theme: minima
 plugins:
     - jekyll-feed
+    - jekyll-redirect-from
+
+# Pages shown in the top navigation, in this order.
+header_pages:
+    - linux.md
+    - windows.md
+    - about.markdown
+
+exclude:
+    - gemfile_copy
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="section-page">
+  <header class="page-hero">
+    <p class="eyebrow">{{ page.eyebrow }}</p>
+    <h1 class="page-hero-title">{{ page.title | escape }}</h1>
+    <p class="page-hero-lead">{{ page.description }}</p>
+    <nav class="toc">
+      {%- for s in page.sections %}
+        <a href="#{{ s.title | slugify }}">{{ s.title }}</a>
+      {%- endfor %}
+    </nav>
+  </header>
+
+  {{ content }}
+
+  {%- for s in page.sections %}
+    {%- assign topic_posts = site.posts | where_exp: "p", "p.path contains s.path" | sort: "date" %}
+    <section class="topic" id="{{ s.title | slugify }}">
+      <h2 class="topic-title">{{ s.title }} <span class="count">{{ topic_posts | size }}</span></h2>
+      {%- if s.blurb %}<p class="topic-blurb">{{ s.blurb }}</p>{% endif %}
+      <ol class="post-cards">
+        {%- for post in topic_posts %}
+          <li>{% include post-card.html post=post %}</li>
+        {%- endfor %}
+      </ol>
+    </section>
+  {%- endfor %}
+</div>
