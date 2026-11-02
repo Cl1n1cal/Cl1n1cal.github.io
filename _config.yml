@@ -23,14 +23,14 @@ email: cl1nical@yahoo.com
 description: >- # this means to ignore newlines until "baseurl:"
   This site features different posts related to binary exploitation
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cl1nical.blog" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://cl1n1cal.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Cl1n1cal
 
 avatar: /assets/images/avatar/profile.png
 
 # Build settings
 theme: minima
-plugin:
+plugins:
     - jekyll-feed
 
 # Exclude from processing.
